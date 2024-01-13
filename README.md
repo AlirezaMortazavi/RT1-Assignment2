@@ -26,7 +26,7 @@ This project implements a Robot Operating System (ROS) with three nodes: Node A,
 ## Installation 
 
 1. Ensure you have a working ROS installation.
-2. Clone thIS repository:
+2. Clone this repository:
 
     ```bash
     git clone https://github.com/AlirezaMortazavi/RT1-Assignment2.git
