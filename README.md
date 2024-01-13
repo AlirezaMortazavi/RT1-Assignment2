@@ -18,6 +18,11 @@ This project implements a Robot Operating System (ROS) with three nodes: Node A,
 - **File:** `node_b.py`
 - **Description:** Node B provides a service that responds with the last desired positions (x and y) stored in the ROS parameter server. It complements the goal-setting functionality of Node A by allowing other nodes or external components to retrieve information about the last set goals. This service-oriented architecture enhances the modularity and flexibility of the overall ROS control system.
 
+to visualize the information, use the following command in a terminal:
+```bash
+    rosservice call /input
+```
+
 ### Node C: Information Calculation
 
 - **File:** `node_c.py`
