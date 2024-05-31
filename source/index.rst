@@ -24,9 +24,9 @@ Indices and tables
 * :ref:`search`
 
 
-node_a!
-**************************************
-The `node_a` script is a core component of the `rt_assignment2` package. This node handles essential operations that form the backbone of the assignment's functionality.
+node_a
+===========================
+The `node_a` script is a core component of the `rt_assignment2` package. This node handles essential operations that form the backbone of the assignment's functionality. It interacts with the ROS action server to send movement goals and cancel them when required. Additionally, it subscribes to odometry data to update the robot's position and velocity.
 
 rt1_assignmrnt2 Module
 ===========================
@@ -38,7 +38,7 @@ rt1_assignmrnt2 Module
 
 node_b
 ===========================
-The `node_b` script provides a service that allows for the retrieval of the last desired x and y positions. This functionality is essential for tracking and managing the robot's movement goals.
+The `node_b` script provides a service that allows for the retrieval of the last desired x and y positions. This functionality is essential for tracking and managing the robot's movement goals. By storing the desired positions as ROS parameters, this node ensures that other components of the system can access the last target positions whenever needed.
 
 .. module:: scripts.node_b
 
@@ -51,7 +51,7 @@ The `node_b` script provides a service that allows for the retrieval of the last
 
 node_c
 ===========================
-The `node_c` script implements the `info_service` node, which logs real-time data of the robot's position, velocity, and other relevant metrics. This node plays a critical role in ensuring that the system has access to necessary data at all times.  
+The `node_c` script logs real-time data of the robot's position, velocity, and other relevant metrics. This node is crucial for monitoring the robot's current state and performance, ensuring that the system has access to up-to-date information at all times. It subscribes to position and velocity topics, calculates distances and average velocities, and provides this information through a ROS service. 
 
 .. module:: scripts.node_c
 
