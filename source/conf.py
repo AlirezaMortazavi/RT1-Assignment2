@@ -15,8 +15,8 @@ show_authors = True
 
 
 project = 'RT1-Assignment2'
-copyright = '2024, Alireza'
-author = 'Alireza'
+copyright = '2024, Seyed Alireza Mortazavi'
+author = 'Seyed Alireza Mortazavi'
 release = '1.0'
 
 # -- General configuration ---------------------------------------------------
@@ -34,7 +34,6 @@ extensions = [
 'sphinx.ext.githubpages',
 "sphinx.ext.napoleon",
 'sphinx.ext.inheritance_diagram',
-'breathe'
 ]
 
 

@@ -3,8 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to rt_assignment2's documentation!
+Welcome to rt1_assignment2's documentation!
 ==========================================
+This documentation provides a comprehensive guide to the `rt_assignment2` package. The package includes multiple nodes implemented in Python, each performing specific tasks essential for the assignment. Below you will find detailed documentation for each node, including their functionality, usage, and integration within the overall system.
+
+Contents
+--------
 
 .. toctree::
    :maxdepth: 2
@@ -22,8 +26,9 @@ Indices and tables
 
 node_a!
 **************************************
-This is the documentation of the rt_assingnemnt2 package!
-rt_assignmrnt2 Module
+The `node_a` script is a core component of the `rt_assignment2` package. This node handles essential operations that form the backbone of the assignment's functionality.
+
+rt1_assignmrnt2 Module
 ===========================
 
 .. automodule:: scripts.node_a
@@ -33,8 +38,7 @@ rt_assignmrnt2 Module
 
 node_b
 ===========================
-
-This package contains a Python script for providing a service to retrieve the last desired x and y positions.
+The `node_b` script provides a service that allows for the retrieval of the last desired x and y positions. This functionality is essential for tracking and managing the robot's movement goals.
 
 .. module:: scripts.node_b
 
@@ -47,12 +51,11 @@ This package contains a Python script for providing a service to retrieve the la
 
 node_c
 ===========================
-
-This package contains a Python script for the info_service node..
+The `node_c` script implements the `info_service` node, which logs real-time data of the robot's position, velocity, and other relevant metrics. This node plays a critical role in ensuring that the system has access to necessary data at all times.  
 
 .. module:: scripts.node_c
 
 .. automodule:: scripts.node_c
    :members:
    :undoc-members:
-   :show-inheritance:
+   :show-inheritance: 
