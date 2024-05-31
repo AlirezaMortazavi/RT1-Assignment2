@@ -8,15 +8,25 @@ This project implements a Robot Operating System (ROS) with three nodes: Node A,
 
 ### Node A: Goal Setting and Cancelation
 
-- **File:** `node_a.py`
-- **Description:** Node A enables users to set new goals or cancel existing goals for a robot within a ROS (Robot Operating System) environment. It subscribes to odometry data, publishes position and velocity information, and interacts with the 'reaching_goal' action server. Users can input commands to set new goals or cancel the current goal, providing a dynamic way to control the robot's movements and goals.
- 
+ - **File:** `node_a.py`
+- **Description:** Node A enables users to set new goals or cancel existing goals for a robot within a ROS environment. It subscribes to odometry data, publishes position and velocity information, and interacts with the 'reaching_goal' action server. Users can input commands to set new goals or cancel the current goal, providing a dynamic way to control the robot's movements and goals.
+
+#### Key Features:
+- Subscribes to odometry data to get the robot's current position and velocity.
+- Publishes position and velocity to the `/pos_vel` topic.
+- Interacts with the 'reaching_goal' action server to send and cancel goals.
+- Provides a user interface for input commands to set or cancel goals dynamically.
+  
 ![rt2](https://github.com/AlirezaMortazavi/RT1-Assignment2/assets/69080319/d2c28dd0-7ec1-42e4-84ba-5785fb4c5969)
 
 ### Node B: Last Desired Position Service
 
 - **File:** `node_b.py`
 - **Description:** Node B provides a service that responds with the last desired positions (x and y) stored in the ROS parameter server. It complements the goal-setting functionality of Node A by allowing other nodes or external components to retrieve information about the last set goals. This service-oriented architecture enhances the modularity and flexibility of the overall ROS control system.
+- #### Key Features:
+- Provides a ROS service named `input`.
+- Retrieves the last desired positions from the ROS parameter server.
+- Enables other components to query the last set goal positions.
 
 to visualize the information, use the following command in a terminal:
 ```bash
