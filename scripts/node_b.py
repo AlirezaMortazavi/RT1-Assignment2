@@ -3,45 +3,48 @@
 import rospy
 from assignment_2_2023.srv import Input, InputResponse
 
-# Function to initialize the ROS node and provide the service
 def ros_node_init():
-    # Initialize the ROS node with the name 'last_target_service'
-    rospy.init_node('last_target_service')
-    # Log information that the ROS node has been initialized
-    rospy.loginfo("Last target node initialized")
+    """
+    Initialize the ROS node and provide the 'input' service.
 
-    # Provide a service named 'input', using the custom service type Input
+    This function initializes a ROS node named 'last_target_service' and provides a service
+    named 'input' which uses the custom service type 'Input'. It also logs the initialization
+    information.
+
+    Side Effects:
+        - Initializes a ROS node.
+        - Sets up a ROS service.
+    """
+    rospy.init_node('last_target_service')
+    rospy.loginfo("Last target node initialized")
     rospy.Service('input', Input, handle_input_request)
 
-
-# Function to handle the service callback
 def handle_input_request(request):
-    # Create a response message
-    response = InputResponse()
+    """
+    Handle the service callback to respond with the last desired target positions.
 
-    # Set the x and y inputs in the response to the last desired positions
-    # Obtain last desired x and y positions from the ROS parameter server
+    Args:
+        request (assignment_2_2023.srv.InputRequest): The request object from the service call.
+
+    Returns:
+        assignment_2_2023.srv.InputResponse: The response object containing the last desired x and y positions.
+    """
+    response = InputResponse()
     last_desired_x = rospy.get_param('/des_pos_x')
     last_desired_y = rospy.get_param('/des_pos_y')
-    # Set the response message with the last desired positions
     response.input_x = last_desired_x
     response.input_y = last_desired_y
-
-    # Return the response message
     return response
 
-
-# Function to keep the ROS node running
 def run_ros_node():
-    # Keep the ROS node running
+    """
+    Keep the ROS node running.
+
+    This function keeps the ROS node active and responsive to service calls.
+    """
     rospy.spin()
 
-
-# Main function
 if __name__ == "__main__":
-    # Initialize the ROS node and provide the service
     ros_node_init()
-
-    # Keep the ROS node running
     run_ros_node()
 
